@@ -17,21 +17,21 @@ namespace Test1.Controllers
                 "check the quality of program"},
         };
 
-        [HttpGet("GetAllDepartments")]
-        public IActionResult GetAllDepartments([FromBody]string? name) {
-            var allDepartments = (from dept in _departments
-                                  where  name==null|| dept.Name == name 
-                                  select new DepartmentDTO
-                                  {
+        //[HttpGet("GetAllDepartments")]
+        //public IActionResult GetAllDepartments([FromBody]string? name) {
+        //    var allDepartments = (from dept in _departments
+        //                          where  name==null|| dept.Name == name 
+        //                          select new DepartmentDTO
+        //                          {
                                        
-                                        Name = dept.Name,
-                                        Description = dept.Description,
-                                        FloorNumber = dept.FloorNumber
-                                  }).ToList();
-            return Ok(allDepartments);
+        //                                Name = dept.Name,
+        //                                Description = dept.Description,
+        //                                FloorNumber = dept.FloorNumber
+        //                          }).ToList();
+        //    return Ok(allDepartments);
 
 
-        }
+        //}
         [HttpGet("GetById")]
         public IActionResult GetById(long id) {
             var department = _departments.FirstOrDefault(d => d.Id == id);
